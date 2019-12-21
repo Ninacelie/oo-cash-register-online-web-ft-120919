@@ -35,5 +35,7 @@ class CashRegister
 
   def void_last_transaction
     @total -= @price
+    @items.delete_if { |a| a < 0}
+    @items
   end
 end
